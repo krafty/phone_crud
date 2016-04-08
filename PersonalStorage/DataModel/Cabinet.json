@@ -1,0 +1,15 @@
+﻿{
+  "ProgramId": "Personal storage",
+  "Records": [
+    {
+      "Id": "{44663E7B-CA7C-474A-9C56-52423325ECAA}",
+      "Key": "First",
+      "Data": "Junk"
+    },
+    {
+      "Id": "{A0052A29-C8A9-46D6-83D2-D0C8F9CB32F8}",
+      "Key": "Second",
+      "Data": "Junkyard"
+    }
+  ]
+}

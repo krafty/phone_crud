@@ -1,4 +1,6 @@
-﻿using PersonalStorage.Common;
+﻿// (c) Rishikesh Parkhe 2016
+using Org.RishikeshParkhe.PersonalStorage.Views;
+using PersonalStorage.Common;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -107,7 +109,7 @@ namespace PersonalStorage
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter.
-                if (!rootFrame.Navigate(typeof(PivotPage), e.Arguments))
+                if (!rootFrame.Navigate(typeof(AllRecords), e.Arguments))
                 {
                     throw new Exception("Failed to create initial page");
                 }
