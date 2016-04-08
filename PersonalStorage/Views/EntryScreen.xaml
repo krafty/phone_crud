@@ -39,7 +39,6 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="100" />
                 <RowDefinition Height="*" />
-                <RowDefinition Height="100" />
             </Grid.RowDefinitions>
             <StackPanel>
                 <TextBlock Text="Enter the key"
@@ -58,10 +57,15 @@
                          Grid.Row="1"
                          VerticalAlignment="Stretch" />
             </Grid>
-            <Button Content="Store"
-                    HorizontalAlignment="Stretch"
-                    Command="{Binding StoreDataCommand}"
-                    Grid.Row="2" />
         </Grid>
     </Grid>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Uid="AddAppBarButton"
+                          x:Name="AddAppBarButton"
+                          Command="{Binding StoreDataCommand}"
+                          Label="store"
+                          Icon="Accept" />
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>

@@ -1,5 +1,6 @@
 ﻿// (c) Rishikesh Parkhe 2016
 using Org.RishikeshParkhe.PersonalStorage.Services;
+using Prism.Commands;
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace Org.RishikeshParkhe.PersonalStorage.ViewModel
     {
         #region Private Fields
 
-        private ObservableCollection<EntryScreenViewModel> _records;
+        private ObservableCollection<StorageRecordViewModel> _records;
         private Repository _repository;
 
         #endregion Private Fields
@@ -30,13 +31,17 @@ namespace Org.RishikeshParkhe.PersonalStorage.ViewModel
             }
 
             _repository = repository;
+
+            AddNewRecordCommand = new DelegateCommand(HandleAddNewRecord);
         }
 
         #endregion Public Constructors
 
         #region Public Properties
 
-        public ObservableCollection<EntryScreenViewModel> Records
+        public DelegateCommand AddNewRecordCommand { get; private set; }
+
+        public ObservableCollection<StorageRecordViewModel> Records
         {
             get
             {
@@ -57,13 +62,21 @@ namespace Org.RishikeshParkhe.PersonalStorage.ViewModel
         public async Task LoadRecords()
         {
             var records = await _repository.RetrieveAllAsync();
-            Records = new ObservableCollection<EntryScreenViewModel>();
+            Records = new ObservableCollection<StorageRecordViewModel>();
             foreach (var r in records)
             {
-                Records.Add(new EntryScreenViewModel(r));
+                Records.Add(new StorageRecordViewModel(r));
             }
         }
 
         #endregion Public Methods
+
+        #region Private Methods
+
+        private void HandleAddNewRecord()
+        {
+        }
+
+        #endregion Private Methods
     }
 }

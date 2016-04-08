@@ -102,6 +102,27 @@ namespace Org.RishikeshParkhe.PersonalStorage.Views
 
         #region Private Methods
 
+        private void AddAppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Frame.Navigate(typeof(EntryScreen)))
+            {
+                throw new Exception("NavigationFailedExceptionMessage");
+            }
+        }
+
+        private void AddNewRecordsHandler(object sender, EventArgs e)
+        {
+        }
+
+        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var itemId = (StorageRecordViewModel)e.ClickedItem;
+            if (!Frame.Navigate(typeof(DisplayRecord), itemId))
+            {
+                throw new Exception("NavigationFailedExceptionMessage");
+            }
+        }
+
         /// <summary>
         /// Populates the page with content passed during navigation.  Any saved state is also
         /// provided when recreating a page from a prior session.

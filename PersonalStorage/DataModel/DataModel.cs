@@ -23,6 +23,7 @@ namespace Org.RishikeshParkhe.PersonalStorage.DataModel
 
         public string Data { get; set; }
         public Guid Id { get; set; }
+        public bool IsSecure { get; set; }
         public string Key { get; set; }
         public DateTime Modified { get; set; }
 

@@ -29,7 +29,7 @@ namespace Org.RishikeshParkhe.PersonalStorage.Views
     {
         #region Private Fields
 
-        private EntryScreenViewModel _viewModel;
+        private StorageRecordViewModel _viewModel;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
         private NavigationHelper navigationHelper;
 
@@ -45,7 +45,8 @@ namespace Org.RishikeshParkhe.PersonalStorage.Views
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
 
-            _viewModel = new EntryScreenViewModel();
+            _viewModel = new StorageRecordViewModel();
+            _viewModel.OperationCompletedEvent += HandleAddRecordComplete;
             this.DataContext = _viewModel;
         }
 
@@ -100,6 +101,11 @@ namespace Org.RishikeshParkhe.PersonalStorage.Views
         #endregion Protected Methods
 
         #region Private Methods
+
+        private void HandleAddRecordComplete(object sender, EventArgs e)
+        {
+            this.NavigationHelper.GoBack();
+        }
 
         /// <summary>
         /// Populates the page with content passed during navigation.  Any saved state is also

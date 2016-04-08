@@ -70,8 +70,9 @@ namespace Org.RishikeshParkhe.PersonalStorage.Views
 
         #region Public Methods
 
-        public void BindData(EntryScreenViewModel viewModel)
+        public void BindData(StorageRecordViewModel viewModel)
         {
+            viewModel.OperationCompletedEvent += HandleExitEvent;
             this.DataContext = viewModel;
         }
 
@@ -106,6 +107,11 @@ namespace Org.RishikeshParkhe.PersonalStorage.Views
 
         #region Private Methods
 
+        private void HandleExitEvent(object sender, EventArgs e)
+        {
+            this.NavigationHelper.GoBack();
+        }
+
         /// <summary>
         /// Populates the page with content passed during navigation.  Any saved state is also
         /// provided when recreating a page from a prior session.
@@ -119,6 +125,8 @@ namespace Org.RishikeshParkhe.PersonalStorage.Views
         /// session.  The state will be null the first time a page is visited.</param>
         private void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
+            StorageRecordViewModel vm = e.NavigationParameter as StorageRecordViewModel;
+            BindData(vm);
         }
 
         /// <summary>

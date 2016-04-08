@@ -38,6 +38,7 @@
               Margin="19,9.5,19,0">
             <ListView ItemsSource="{Binding Records}"
                       IsItemClickEnabled="True"
+                      ItemClick="ListView_ItemClick"
                       ContinuumNavigationTransitionInfo.ExitElementContainer="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -60,4 +61,22 @@
             </ListView>
         </Grid>
     </Grid>
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Uid="AddAppBarButton"
+                          x:Name="AddAppBarButton"
+                          Label="add"
+                          Icon="Add"
+                          Click="AddAppBarButton_Click" />
+            <CommandBar.SecondaryCommands>
+                <AppBarButton x:Uid="SecondaryButton1"
+                              x:Name="SecondaryButton1"
+                              Label="secondary command 1" />
+                <AppBarButton x:Uid="SecondaryButton2"
+                              x:Name="SecondaryButton2"
+                              Label="secondary command 2" />
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>

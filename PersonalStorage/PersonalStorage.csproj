@@ -122,7 +122,7 @@
     <Compile Include="Services\Repository.cs" />
     <Compile Include="Services\SecureStorageService.cs" />
     <Compile Include="ViewModel\AllRecordsViewModel.cs" />
-    <Compile Include="ViewModel\EntryScreenViewModel.cs" />
+    <Compile Include="ViewModel\StorageRecordViewModel.cs" />
     <Compile Include="Views\AllRecords.xaml.cs">
       <DependentUpon>AllRecords.xaml</DependentUpon>
     </Compile>
