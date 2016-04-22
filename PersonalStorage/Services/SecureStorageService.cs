@@ -9,5 +9,9 @@ namespace Org.RishikeshParkhe.PersonalStorage.Services
 {
     public class SecureStorageService
     {
+        public SecureStorageService()
+        {
+            var rsa = Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider.OpenAlgorithm("RSA");
+        }
     }
 }

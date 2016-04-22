@@ -11,6 +11,7 @@ namespace Org.RishikeshParkhe.PersonalStorage.DataModel
     {
         #region Public Properties
 
+        public string Hash { get; set; }
         public string ProgramId { get; set; }
         public List<StorageRecord> Records { get; set; }
 
